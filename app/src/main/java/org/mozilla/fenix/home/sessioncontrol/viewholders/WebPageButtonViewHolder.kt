@@ -1,7 +1,3 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 package org.mozilla.fenix.home.sessioncontrol.viewholders
 
 import android.view.View
@@ -16,19 +12,29 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LifecycleOwner
+import androidx.recyclerview.widget.RecyclerView
 import mozilla.components.lib.state.ext.observeAsComposableState
 import org.mozilla.fenix.R
 import org.mozilla.fenix.components.components
 import org.mozilla.fenix.compose.ComposeViewHolder
 import org.mozilla.fenix.compose.button.TertiaryButton
-import org.mozilla.fenix.home.sessioncontrol.CustomizeHomeIteractor
+import org.mozilla.fenix.home.sessioncontrol.OpenWebPageInteractor
 import org.mozilla.fenix.theme.FirefoxTheme
 import org.mozilla.fenix.wallpapers.WallpaperState
 
-class CustomizeHomeButtonViewHolder(
+/**
+ * ViewHolder for a new button that will open a new web page for official android documentation.
+ *
+ * @param composeView parent in which this view will be shown.
+ * @param viewLifecycleOwner parent [LifecycleOwner] which this view will react.
+ * @param interactor [OpenWebPageInteractor] callback for user interaction.
+ *
+ * @return [ComposeViewHolder] that can be added to a [RecyclerView].
+ */
+class WebPageButtonViewHolder(
     composeView: ComposeView,
     viewLifecycleOwner: LifecycleOwner,
-    private val interactor: CustomizeHomeIteractor,
+    private val interactor: OpenWebPageInteractor,
 ) : ComposeViewHolder(composeView, viewLifecycleOwner) {
 
     companion object {
@@ -44,7 +50,8 @@ class CustomizeHomeButtonViewHolder(
     @Composable
     override fun Content() {
         val wallpaperState = components.appStore
-            .observeAsComposableState { state -> state.wallpaperState }.value ?: WallpaperState.default
+            .observeAsComposableState { state -> state.wallpaperState }.value
+            ?: WallpaperState.default
         var buttonColor: Color = FirefoxTheme.colors.actionTertiary
 
         wallpaperState.composeRunIfWallpaperCardColorsAreAvailable { cardColorLight, cardColorDark ->
@@ -56,21 +63,13 @@ class CustomizeHomeButtonViewHolder(
         }
 
         Column {
-            Spacer(modifier = Modifier.height(68.dp))
+            Spacer(modifier = Modifier.height(18.dp))
 
             TertiaryButton(
-                text = stringResource(R.string.browser_menu_customize_home_1),
+                text = stringResource(R.string.browser_menu_open_web),
                 backgroundColor = buttonColor,
-                onClick = interactor::openCustomizeHomePage,
+                onClick = interactor::openAndroidDeveloperWebPage,
             )
-
-//            Spacer(modifier = Modifier.height(20.dp))
-//
-//            TertiaryButton(
-//                text = stringResource(R.string.browser_menu_open_web),
-//                backgroundColor = buttonColor,
-//                onClick = intertactor2::openAndroidDeveloperWebPage,
-//            )
         }
     }
 }

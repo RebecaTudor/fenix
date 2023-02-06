@@ -179,6 +179,16 @@ interface CustomizeHomeIteractor {
 }
 
 /**
+ * Interface for action related to opening android developer page.
+ */
+interface OpenWebPageInteractor {
+    /**
+     * Opens web page.
+     */
+    fun openAndroidDeveloperWebPage()
+}
+
+/**
  * Interface for top site related actions in the [SessionControlInteractor].
  */
 interface TopSiteInteractor {
@@ -263,7 +273,8 @@ class SessionControlInteractor(
     RecentVisitsInteractor,
     CustomizeHomeIteractor,
     PocketStoriesInteractor,
-    SearchSelectorInteractor {
+    SearchSelectorInteractor,
+    OpenWebPageInteractor {
 
     override fun onCollectionAddTabTapped(collection: TabCollection) {
         controller.handleCollectionAddTabTapped(collection)
@@ -417,6 +428,10 @@ class SessionControlInteractor(
 
     override fun openCustomizeHomePage() {
         controller.handleCustomizeHomeTapped()
+    }
+
+    override fun openAndroidDeveloperWebPage() {
+        controller.handleOpenAndroidDeveloperWebPageTapped()
     }
 
     override fun onStoryShown(storyShown: PocketStory, storyPosition: Pair<Int, Int>) {
