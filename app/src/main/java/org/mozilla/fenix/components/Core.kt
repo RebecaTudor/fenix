@@ -480,6 +480,13 @@ class Core(
                             SupportUtils.WIKIPEDIA_URL,
                         ),
                     )
+
+                    defaultTopSites.add(
+                        Pair(
+                            context.getString(R.string.default_top_site_android_developer),
+                            SupportUtils.ANDROID_DEVELOPER_URL,
+                        ),
+                    )
                 }
 
                 context.settings().defaultTopSitesAdded = true

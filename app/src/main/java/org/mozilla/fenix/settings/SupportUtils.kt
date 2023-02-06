@@ -25,6 +25,7 @@ object SupportUtils {
     const val WIKIPEDIA_URL = "https://www.wikipedia.org/"
     const val FENIX_PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=${BuildConfig.APPLICATION_ID}"
     const val GOOGLE_URL = "https://www.google.com/"
+    const val ANDROID_DEVELOPER_URL = "https://developer.android.com/"
     const val BAIDU_URL = "https://m.baidu.com/?from=1000969a"
     const val JD_URL = "https://union-click.jd.com/jdc" +
         "?e=&p=AyIGZRprFDJWWA1FBCVbV0IUWVALHFRBEwQAQB1AWQkFVUVXfFkAF14lRFRbJXstVWR3WQ1rJ08AZnhS" +
@@ -36,6 +37,7 @@ object SupportUtils {
     const val MEITUAN_URL = "https://tb.j5k6.com/6ZSOp"
     const val GOOGLE_US_URL = "https://www.google.com/webhp?client=firefox-b-1-m&channel=ts"
     const val GOOGLE_XX_URL = "https://www.google.com/webhp?client=firefox-b-m&channel=ts"
+    const val ANDROID_DEVELOPER = "https://developer.android.com/"
 
     enum class SumoTopic(internal val topicStr: String) {
         HELP("faq-android"),
