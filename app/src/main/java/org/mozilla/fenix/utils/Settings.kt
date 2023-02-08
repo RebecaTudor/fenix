@@ -1472,6 +1472,14 @@ class Settings(private val appContext: Context) : PreferencesHolder {
     )
 
     /**
+     * Indicates if the Secret buttons should be visible.
+     */
+    var showWebPageButtonsFeature by booleanPreference(
+        key = appContext.getPreferenceKey(R.string.pref_key_enable_web_page_buttons),
+        default = true,
+    )
+
+    /**
      * Blocklist used to filter items from the home screen that have previously been removed.
      */
     var homescreenBlocklist by stringSetPreference(
