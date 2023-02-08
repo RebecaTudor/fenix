@@ -199,9 +199,9 @@ interface SessionControlController {
     fun handleCustomizeHomeTapped()
 
     /**
-     * @see [OpenWebPageInteractor.openAndroidDeveloperWebPage]
+     * @see [BottomButtonsInteractor.onOpenWebPageClicked]
      */
-    fun handleOpenAndroidDeveloperWebPageTapped()
+    fun handleOpenWebPageClicked()
 
     /**
      * @see [OnboardingInteractor.showWallpapersOnboardingDialog]
@@ -500,9 +500,9 @@ class DefaultSessionControlController(
         HomeScreen.customizeHomeClicked.record(NoExtras())
     }
 
-    override fun handleOpenAndroidDeveloperWebPageTapped() {
+    override fun handleOpenWebPageClicked() {
         activity.openToBrowserAndLoad(
-            "https://developer.android.com/",
+            SupportUtils.ANDROID_DEVELOPER_URL,
             true,
             BrowserDirection.FromHome,
             null,
@@ -512,7 +512,7 @@ class DefaultSessionControlController(
             false,
             null,
         )
-        appStore.dispatch(AppAction.OpenWebPageButtonVisiblity(false))
+        appStore.dispatch(AppAction.VisibilityButtonChange(false))
     }
 
     override fun handleShowWallpapersOnboardingDialog(state: WallpaperState): Boolean {

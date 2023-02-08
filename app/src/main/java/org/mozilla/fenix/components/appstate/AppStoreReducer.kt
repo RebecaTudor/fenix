@@ -57,7 +57,7 @@ internal object AppStoreReducer {
 
             state.copy(expandedCollections = newExpandedCollection)
         }
-        is AppAction.OpenWebPageButtonVisiblity -> state.copy(action.isVisible)
+        is AppAction.VisibilityButtonChange -> state.copy(isVisibleOpenWebPageButton = action.isVisible)
         is AppAction.CollectionsChange -> state.copy(collections = action.collections)
         is AppAction.ModeChange -> state.copy(mode = action.mode)
         is AppAction.TopSitesChange -> state.copy(topSites = action.topSites)
