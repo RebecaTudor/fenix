@@ -65,7 +65,7 @@
     <!-- Label for the top site visibility preference -->
     <string name="preferences_android_developer_top_site_visibility">Top Site</string>
     <!-- Label for the android developer home button visibility preference -->
-    <string name="preferences_android_developer_home_button_visibility">Home Button</string>
+    <string name="preferences_android_developer_home_button_visibility">Homescreen Bottom Button</string>
 
     <!-- A secret menu option in the tabs tray for making a tab inactive for testing. -->
     <string name="inactive_tabs_menu_item">Make inactive</string>

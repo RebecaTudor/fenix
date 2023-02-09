@@ -18,7 +18,7 @@ import org.mozilla.fenix.R
 import org.mozilla.fenix.components.components
 import org.mozilla.fenix.compose.ComposeViewHolder
 import org.mozilla.fenix.compose.button.TertiaryButton
-import org.mozilla.fenix.home.sessioncontrol.BottomButtonsInteractor
+import org.mozilla.fenix.home.sessioncontrol.AndroidDeveloperDocumentationInteractor
 import org.mozilla.fenix.theme.FirefoxTheme
 import org.mozilla.fenix.wallpapers.WallpaperState
 
@@ -27,14 +27,14 @@ import org.mozilla.fenix.wallpapers.WallpaperState
  *
  * @param composeView parent in which this view will be shown.
  * @param viewLifecycleOwner parent [LifecycleOwner] which this view will react.
- * @param interactor [BottomButtonsInteractor] callback for user interaction.
+ * @param interactor [AndroidDeveloperDocumentationInteractor] callback for user interaction.
  *
  * @return [ComposeViewHolder] that can be added to a [RecyclerView].
  */
 class WebPageButtonViewHolder(
     composeView: ComposeView,
     viewLifecycleOwner: LifecycleOwner,
-    private val interactor: BottomButtonsInteractor,
+    private val interactor: AndroidDeveloperDocumentationInteractor,
 ) : ComposeViewHolder(composeView, viewLifecycleOwner) {
 
     companion object {
@@ -66,9 +66,9 @@ class WebPageButtonViewHolder(
             Spacer(modifier = Modifier.height(18.dp))
 
             TertiaryButton(
-                text = stringResource(R.string.browser_menu_open_web),
+                text = stringResource(R.string.browser_menu_android_developer),
                 backgroundColor = buttonColor,
-                onClick = interactor::onOpenWebPageClicked,
+                onClick = interactor::onAndroidDeveloperClicked,
             )
         }
     }

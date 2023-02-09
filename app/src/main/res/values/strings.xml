@@ -215,7 +215,7 @@
     <!-- Button shown on the home page that opens the Customize home settings -->
     <string name="browser_menu_customize_home_1">Customize homepage</string>
     <!-- Button shown on the home page that opens the Android Developers web -->
-    <string name="browser_menu_open_web">Open web page</string>
+    <string name="browser_menu_android_developer">Android developer</string>
     <!-- Browser Toolbar -->
     <!-- Content description for the Home screen button on the browser toolbar -->
     <string name="browser_toolbar_home">Home screen</string>

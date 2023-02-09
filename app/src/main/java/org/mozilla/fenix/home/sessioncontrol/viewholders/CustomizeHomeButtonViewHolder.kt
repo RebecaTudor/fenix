@@ -63,14 +63,6 @@ class CustomizeHomeButtonViewHolder(
                 backgroundColor = buttonColor,
                 onClick = interactor::openCustomizeHomePage,
             )
-
-//            Spacer(modifier = Modifier.height(20.dp))
-//
-//            TertiaryButton(
-//                text = stringResource(R.string.browser_menu_open_web),
-//                backgroundColor = buttonColor,
-//                onClick = intertactor2::openAndroidDeveloperWebPage,
-//            )
         }
     }
 }

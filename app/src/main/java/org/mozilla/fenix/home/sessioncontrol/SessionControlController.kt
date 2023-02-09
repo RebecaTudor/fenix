@@ -199,9 +199,9 @@ interface SessionControlController {
     fun handleCustomizeHomeTapped()
 
     /**
-     * @see [BottomButtonsInteractor.onOpenWebPageClicked]
+     * @see [AndroidDeveloperDocumentationInteractor.onAndroidDeveloperClicked]
      */
-    fun handleOpenWebPageClicked()
+    fun handleAndroidDeveloperClicked()
 
     /**
      * @see [OnboardingInteractor.showWallpapersOnboardingDialog]
@@ -500,7 +500,7 @@ class DefaultSessionControlController(
         HomeScreen.customizeHomeClicked.record(NoExtras())
     }
 
-    override fun handleOpenWebPageClicked() {
+    override fun handleAndroidDeveloperClicked() {
         activity.openToBrowserAndLoad(
             SupportUtils.ANDROID_DEVELOPER_URL,
             true,
