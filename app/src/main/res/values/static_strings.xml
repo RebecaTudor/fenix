@@ -61,6 +61,11 @@
     <!-- Label for enabling the Secret Web Page Buttons feature -->
     <string name="preferences_debug_settings_enable_android_developer_documentation" translatable="false">Enable Android Developer Documentation</string>
 
+    <!-- Android Developer Visibility Strings -->
+    <!-- Label for the top site visibility preference -->
+    <string name="preferences_android_developer_top_site_visibility">Top Site</string>
+    <!-- Label for the android developer home button visibility preference -->
+    <string name="preferences_android_developer_home_button_visibility">Home Button</string>
 
     <!-- A secret menu option in the tabs tray for making a tab inactive for testing. -->
     <string name="inactive_tabs_menu_item">Make inactive</string>

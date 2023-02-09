@@ -347,6 +347,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
             resources.getString(R.string.pref_key_customize) -> {
                 SettingsFragmentDirections.actionSettingsFragmentToCustomizationFragment()
             }
+            resources.getString(R.string.pref_key_android_developer_visibility) -> {
+                SettingsFragmentDirections.actionSettingsFragmentToAndroidDeveloperVisibilityFragment()
+            }
             resources.getString(R.string.pref_key_privacy_link) -> {
                 val intent = SupportUtils.createCustomTabIntent(
                     requireContext(),

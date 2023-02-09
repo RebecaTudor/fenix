@@ -71,6 +71,7 @@
     <string name="pref_key_re_engagement_notification_enabled" translatable="false">pref_key_re_engagement_notification_enabled</string>
     <string name="pref_key_is_first_run" translatable="false">pref_key_is_first_run</string>
     <string name="pref_key_home_blocklist">pref_key_home_blocklist</string>
+    <string name="pref_key_android_developer_visibility" translatable="false">pref_key_android_developer_visibility</string>
 
     <!-- Data Choices -->
     <string name="pref_key_telemetry" translatable="false">pref_key_telemetry</string>
@@ -317,6 +318,10 @@
     <string name="pref_key_show_unified_search" translatable="false">pref_key_show_unified_search</string>
     <string name="pref_key_custom_glean_server_url" translatable="false">pref_key_custom_glean_server_url</string>
     <string name="pref_key_enable_android_developer_documentation" translatable="false">pref_key_enable_android_developer_documentation</string>
+
+    <!-- Android Developer Visibility -->
+    <string name="pref_key_show_android_developer_top_site" translatable="false">pref_key_show_android_developer_top_site</string>
+    <string name="pref_key_show_android_developer_home_button" translatable="false">pref_key_show_android_developer_home_button</string>
 
     <!-- Growth Data -->
     <string name="pref_key_growth_set_as_default" translatable="false">pref_key_growth_set_as_default</string>
