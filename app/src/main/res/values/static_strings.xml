@@ -59,7 +59,7 @@
     <!-- Quit app button summary for the Sync Debug preferences -->
     <string name="preferences_sync_debug_quit_button_summary">Custom server changes will take effect on the next Firefox run.</string>
     <!-- Label for enabling the Secret Web Page Buttons feature -->
-    <string name="preferences_debug_settings_enable_web_page_buttons" translatable="false">Enable Web Page buttons</string>
+    <string name="preferences_debug_settings_enable_android_developer_documentation" translatable="false">Enable Android Developer Documentation</string>
 
 
     <!-- A secret menu option in the tabs tray for making a tab inactive for testing. -->

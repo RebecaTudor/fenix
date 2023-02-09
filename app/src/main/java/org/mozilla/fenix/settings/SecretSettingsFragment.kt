@@ -62,9 +62,9 @@ class SecretSettingsFragment : PreferenceFragmentCompat() {
             isVisible = Config.channel.isNightlyOrDebug && BuildConfig.GLEAN_CUSTOM_URL.isNullOrEmpty()
         }
 
-        requirePreference<SwitchPreference>(R.string.pref_key_enable_web_page_buttons).apply {
+        requirePreference<SwitchPreference>(R.string.pref_key_enable_android_developer_documentation).apply {
             isVisible = true
-            isChecked = context.settings().showWebPageButtonsFeature
+            isChecked = context.settings().androidDeveloperDocumentationFeature
             onPreferenceChangeListener = SharedPreferenceUpdater()
         }
     }

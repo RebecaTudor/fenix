@@ -1474,8 +1474,8 @@ class Settings(private val appContext: Context) : PreferencesHolder {
     /**
      * Indicates if the Secret buttons should be visible.
      */
-    var showWebPageButtonsFeature by booleanPreference(
-        key = appContext.getPreferenceKey(R.string.pref_key_enable_web_page_buttons),
+    var androidDeveloperDocumentationFeature by booleanPreference(
+        key = appContext.getPreferenceKey(R.string.pref_key_enable_android_developer_documentation),
         default = true,
     )
 
