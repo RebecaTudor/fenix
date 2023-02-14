@@ -347,6 +347,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
             resources.getString(R.string.pref_key_customize) -> {
                 SettingsFragmentDirections.actionSettingsFragmentToCustomizationFragment()
             }
+            resources.getString(R.string.pref_key_android_developer_visibility) -> {
+                SettingsFragmentDirections.actionSettingsFragmentToAndroidDeveloperVisibilityFragment()
+            }
             resources.getString(R.string.pref_key_privacy_link) -> {
                 val intent = SupportUtils.createCustomTabIntent(
                     requireContext(),
@@ -476,6 +479,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
             findPreference<Preference>(
                 getPreferenceKey(R.string.pref_key_sync_debug),
             )?.isVisible = showSecretDebugMenuThisSession
+            findPreference<Preference>(
+                getPreferenceKey(R.string.pref_key_android_developer_visibility),
+            )?.isVisible = androidDeveloperDocumentationFeature
             preferenceStartProfiler?.isVisible = showSecretDebugMenuThisSession &&
                 (requireContext().components.core.engine.profiler?.isProfilerActive() != null)
         }

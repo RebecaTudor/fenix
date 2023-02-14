@@ -1472,6 +1472,30 @@ class Settings(private val appContext: Context) : PreferencesHolder {
     )
 
     /**
+     * Indicates if the Secret buttons should be visible.
+     */
+    var androidDeveloperDocumentationFeature by booleanPreference(
+        key = appContext.getPreferenceKey(R.string.pref_key_enable_android_developer_documentation),
+        default = true,
+    )
+
+    /**
+     * Indicates if the android developer top site should be visible.
+     */
+    var androidDeveloperTopSite by booleanPreference(
+        key = appContext.getPreferenceKey(R.string.pref_key_show_android_developer_top_site),
+        default = true,
+    )
+
+    /**
+     * Indicates if the android developer homescreen button should be visible.
+     */
+    var androidDeveloperHomescreenButton by booleanPreference(
+        key = appContext.getPreferenceKey(R.string.pref_key_show_android_developer_home_button),
+        default = true,
+    )
+
+    /**
      * Blocklist used to filter items from the home screen that have previously been removed.
      */
     var homescreenBlocklist by stringSetPreference(

@@ -512,6 +512,13 @@
             app:argType="string"
             app:nullable="true" />
         <action
+            android:id="@+id/action_settingsFragment_to_androidDeveloperVisibilityFragment"
+            app:destination="@id/androidDeveloperVisibilityFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
             android:id="@+id/action_settingsFragment_to_dataChoicesFragment"
             app:destination="@id/dataChoicesFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -830,6 +837,10 @@
         android:id="@+id/customizationFragment"
         android:name="org.mozilla.fenix.settings.CustomizationFragment"
         android:label="@string/preferences_customize" />
+    <fragment
+        android:id="@+id/androidDeveloperVisibilityFragment"
+        android:name="org.mozilla.fenix.settings.AndroidDeveloperVisibilityFragment"
+        android:label="@string/preferences_android_developer_visibility" />
     <fragment
         android:id="@+id/privateBrowsingFragment"
         android:name="org.mozilla.fenix.settings.PrivateBrowsingFragment"

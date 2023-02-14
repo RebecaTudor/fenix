@@ -31,6 +31,7 @@ import org.mozilla.fenix.home.recenttabs.view.RecentTabViewHolder
 import org.mozilla.fenix.home.recenttabs.view.RecentTabsHeaderViewHolder
 import org.mozilla.fenix.home.recentvisits.view.RecentVisitsHeaderViewHolder
 import org.mozilla.fenix.home.recentvisits.view.RecentlyVisitedViewHolder
+import org.mozilla.fenix.home.sessioncontrol.viewholders.AndroidDeveloperButtonViewHolder
 import org.mozilla.fenix.home.sessioncontrol.viewholders.CollectionHeaderViewHolder
 import org.mozilla.fenix.home.sessioncontrol.viewholders.CustomizeHomeButtonViewHolder
 import org.mozilla.fenix.home.sessioncontrol.viewholders.NoCollectionsMessageViewHolder
@@ -166,6 +167,8 @@ sealed class AdapterItem(@LayoutRes val viewType: Int) {
 
     object CustomizeHomeButton : AdapterItem(CustomizeHomeButtonViewHolder.LAYOUT_ID)
 
+    object AndroidDeveloperButton : AdapterItem(AndroidDeveloperButtonViewHolder.LAYOUT_ID)
+
     object RecentTabsHeader : AdapterItem(RecentTabsHeaderViewHolder.LAYOUT_ID)
     object RecentTabItem : AdapterItem(RecentTabViewHolder.LAYOUT_ID)
 
@@ -224,6 +227,11 @@ class SessionControlAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         when (viewType) {
             CustomizeHomeButtonViewHolder.LAYOUT_ID -> return CustomizeHomeButtonViewHolder(
+                composeView = ComposeView(parent.context),
+                viewLifecycleOwner = viewLifecycleOwner,
+                interactor = interactor,
+            )
+            AndroidDeveloperButtonViewHolder.LAYOUT_ID -> return AndroidDeveloperButtonViewHolder(
                 composeView = ComposeView(parent.context),
                 viewLifecycleOwner = viewLifecycleOwner,
                 interactor = interactor,
@@ -345,6 +353,7 @@ class SessionControlAdapter(
         when (holder) {
             is CollectionHeaderViewHolder,
             is CustomizeHomeButtonViewHolder,
+            is AndroidDeveloperButtonViewHolder,
             is RecentlyVisitedViewHolder,
             is RecentVisitsHeaderViewHolder,
             is RecentBookmarksViewHolder,

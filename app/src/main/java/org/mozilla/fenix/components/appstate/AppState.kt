@@ -70,4 +70,6 @@ data class AppState(
     val messaging: MessagingState = MessagingState(),
     val pendingDeletionHistoryItems: Set<PendingDeletionHistory> = emptySet(),
     val wallpaperState: WallpaperState = WallpaperState.default,
+    val isVisibleAndroidDeveloperButton: Boolean = true,
+    val isVisibleAndroidDeveloperTopSite: Boolean = true,
 ) : State

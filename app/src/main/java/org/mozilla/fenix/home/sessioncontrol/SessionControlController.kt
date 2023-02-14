@@ -20,6 +20,7 @@ import mozilla.components.browser.state.state.searchEngines
 import mozilla.components.browser.state.state.selectedOrDefaultSearchEngine
 import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.concept.engine.Engine
+import mozilla.components.concept.engine.EngineSession
 import mozilla.components.concept.engine.prompt.ShareData
 import mozilla.components.feature.session.SessionUseCases
 import mozilla.components.feature.tab.collections.TabCollection
@@ -198,6 +199,11 @@ interface SessionControlController {
     fun handleCustomizeHomeTapped()
 
     /**
+     * @see [AndroidDeveloperDocumentationInteractor.onAndroidDeveloperClicked]
+     */
+    fun handleAndroidDeveloperClicked()
+
+    /**
      * @see [OnboardingInteractor.showWallpapersOnboardingDialog]
      */
     fun handleShowWallpapersOnboardingDialog(state: WallpaperState): Boolean
@@ -336,8 +342,7 @@ class DefaultSessionControlController(
         activity.let {
             val customLayout =
                 LayoutInflater.from(it).inflate(R.layout.top_sites_rename_dialog, null)
-            val topSiteLabelEditText: EditText =
-                customLayout.findViewById(R.id.top_site_title)
+            val topSiteLabelEditText: EditText = customLayout.findViewById(R.id.top_site_title)
             topSiteLabelEditText.setText(topSite.title)
 
             AlertDialog.Builder(it).apply {
@@ -429,6 +434,7 @@ class DefaultSessionControlController(
             activity.handleRequestDesktopMode(tabId)
         }
         activity.openToBrowser(BrowserDirection.FromHome)
+        appStore.dispatch(AppAction.VisibilityAndroidDeveloperTopSiteChange(false))
     }
 
     @VisibleForTesting
@@ -495,6 +501,21 @@ class DefaultSessionControlController(
         HomeScreen.customizeHomeClicked.record(NoExtras())
     }
 
+    override fun handleAndroidDeveloperClicked() {
+        activity.openToBrowserAndLoad(
+            SupportUtils.ANDROID_DEVELOPER_URL,
+            true,
+            BrowserDirection.FromHome,
+            null,
+            null,
+            false,
+            EngineSession.LoadUrlFlags.none(),
+            false,
+            null,
+        )
+        appStore.dispatch(AppAction.VisibilityHomescreennAndroidDeveloperButtonChange(false))
+    }
+
     override fun handleShowWallpapersOnboardingDialog(state: WallpaperState): Boolean {
         return if (activity.browsingModeManager.mode.isPrivate) {
             false
@@ -544,11 +565,9 @@ class DefaultSessionControlController(
         // Only register the observer right before moving to collection creation
         registerCollectionStorageObserver()
 
-        val tabIds = store.state
-            .getNormalOrPrivateTabs(private = activity.browsingModeManager.mode.isPrivate)
-            .map { session -> session.id }
-            .toList()
-            .toTypedArray()
+        val tabIds =
+            store.state.getNormalOrPrivateTabs(private = activity.browsingModeManager.mode.isPrivate)
+                .map { session -> session.id }.toList().toTypedArray()
         val directions = HomeFragmentDirections.actionGlobalCollectionCreationFragment(
             tabIds = tabIds,
             saveCollectionStep = step,

@@ -63,6 +63,11 @@
             android:title="@string/preferences_customize" />
 
         <androidx.preference.Preference
+            android:key="@string/pref_key_android_developer_visibility"
+            app:iconSpaceReserved="false"
+            android:title="@string/preferences_android_developer_visibility" />
+
+        <androidx.preference.Preference
             android:key="@string/pref_key_passwords"
             app:iconSpaceReserved="false"
             android:title="@string/preferences_passwords_logins_and_passwords" />

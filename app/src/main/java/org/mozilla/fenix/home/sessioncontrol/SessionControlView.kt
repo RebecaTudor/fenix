@@ -105,6 +105,10 @@ internal fun normalModeAdapterItems(
         items.add(AdapterItem.CustomizeHomeButton)
     }
 
+    if (settings.androidDeveloperHomescreenButton) {
+        items.add(AdapterItem.AndroidDeveloperButton)
+    }
+
     items.add(AdapterItem.BottomSpacer)
 
     return items
@@ -215,10 +219,8 @@ class SessionControlView(
                     super.onLayoutCompleted(state)
 
                     if (!featureRecommended && !context.settings().showHomeOnboardingDialog) {
-                        if (!context.settings().showHomeOnboardingDialog && (
-                            context.settings().showSyncCFR ||
-                                context.settings().shouldShowJumpBackInCFR
-                            )
+                        if (!context.settings().showHomeOnboardingDialog &&
+                            (context.settings().showSyncCFR || context.settings().shouldShowJumpBackInCFR)
                         ) {
                             featureRecommended = HomeCFRPresenter(
                                 context = context,

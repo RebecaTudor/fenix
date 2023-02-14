@@ -51,6 +51,7 @@
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$CollectionExpanded : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$CollectionsChange : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$DisbandSearchGroupAction : AppAction</ID>
+    <ID>UndocumentedPublicClass:AppAction.kt$AppAction$OpenWebPageButtonVisiblity : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$ModeChange : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$RecentBookmarksChange : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$RecentHistoryChange : AppAction</ID>
@@ -62,6 +63,8 @@
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$RemoveRecentHistoryHighlight : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$RemoveRecentTab : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$TopSitesChange : AppAction</ID>
+    <ID>UndocumentedPublicClass:AppAction.kt$AppAction$VisibilityHomescreennAndroidDeveloperButtonChange : AppAction</ID>
+    <ID>UndocumentedPublicClass:AppAction.kt$AppAction$VisibilityAndroidDeveloperTopSiteChange : AppAction</ID>
     <ID>UndocumentedPublicClass:AppAction.kt$AppAction$UpdateInactiveExpanded : AppAction</ID>
     <ID>UndocumentedPublicClass:AppRequestInterceptor.kt$AppRequestInterceptor : RequestInterceptor</ID>
     <ID>UndocumentedPublicClass:AppStartReasonProvider.kt$AppStartReasonProvider$StartReason</ID>
@@ -346,6 +349,7 @@
     <ID>UndocumentedPublicClass:SessionControlAdapter.kt$AdapterItem$CollectionHeader : AdapterItem</ID>
     <ID>UndocumentedPublicClass:SessionControlAdapter.kt$AdapterItem$CollectionItem : AdapterItem</ID>
     <ID>UndocumentedPublicClass:SessionControlAdapter.kt$AdapterItem$CustomizeHomeButton : AdapterItem</ID>
+    <ID>UndocumentedPublicClass:SessionControlAdapter.kt$AdapterItem$AndroidDeveloperButton : AdapterItem</ID>
     <ID>UndocumentedPublicClass:SessionControlAdapter.kt$AdapterItem$NimbusMessageCard : AdapterItem</ID>
     <ID>UndocumentedPublicClass:SessionControlAdapter.kt$AdapterItem$NoCollectionsMessage : AdapterItem</ID>
     <ID>UndocumentedPublicClass:SessionControlAdapter.kt$AdapterItem$OnboardingFinish : AdapterItem</ID>

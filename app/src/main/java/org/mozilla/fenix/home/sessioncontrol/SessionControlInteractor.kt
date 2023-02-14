@@ -179,6 +179,16 @@ interface CustomizeHomeIteractor {
 }
 
 /**
+ * Interface for homescreen's bottom button related actions in the [SessionControlInteractor].
+ */
+interface AndroidDeveloperDocumentationInteractor {
+    /**
+     * Opens Android developer web page.
+     */
+    fun onAndroidDeveloperClicked()
+}
+
+/**
  * Interface for top site related actions in the [SessionControlInteractor].
  */
 interface TopSiteInteractor {
@@ -263,7 +273,8 @@ class SessionControlInteractor(
     RecentVisitsInteractor,
     CustomizeHomeIteractor,
     PocketStoriesInteractor,
-    SearchSelectorInteractor {
+    SearchSelectorInteractor,
+    AndroidDeveloperDocumentationInteractor {
 
     override fun onCollectionAddTabTapped(collection: TabCollection) {
         controller.handleCollectionAddTabTapped(collection)
@@ -417,6 +428,10 @@ class SessionControlInteractor(
 
     override fun openCustomizeHomePage() {
         controller.handleCustomizeHomeTapped()
+    }
+
+    override fun onAndroidDeveloperClicked() {
+        controller.handleAndroidDeveloperClicked()
     }
 
     override fun onStoryShown(storyShown: PocketStory, storyPosition: Pair<Int, Int>) {

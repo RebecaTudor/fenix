@@ -61,5 +61,17 @@ class SecretSettingsFragment : PreferenceFragmentCompat() {
         requirePreference<EditTextPreference>(R.string.pref_key_custom_glean_server_url).apply {
             isVisible = Config.channel.isNightlyOrDebug && BuildConfig.GLEAN_CUSTOM_URL.isNullOrEmpty()
         }
+
+        requirePreference<SwitchPreference>(R.string.pref_key_enable_android_developer_documentation).apply {
+            isVisible = true
+            isChecked = context.settings().androidDeveloperDocumentationFeature
+            onPreferenceChangeListener = object : SharedPreferenceUpdater() {
+                override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
+                    context.components.settings.androidDeveloperHomescreenButton = newValue as Boolean
+                    context.components.settings.androidDeveloperTopSite = newValue
+                    return super.onPreferenceChange(preference, newValue)
+                }
+            }
+        }
     }
 }
