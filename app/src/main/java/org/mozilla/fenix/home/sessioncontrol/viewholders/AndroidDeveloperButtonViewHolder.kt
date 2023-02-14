@@ -31,7 +31,7 @@ import org.mozilla.fenix.wallpapers.WallpaperState
  *
  * @return [ComposeViewHolder] that can be added to a [RecyclerView].
  */
-class WebPageButtonViewHolder(
+class AndroidDeveloperButtonViewHolder(
     composeView: ComposeView,
     viewLifecycleOwner: LifecycleOwner,
     private val interactor: AndroidDeveloperDocumentationInteractor,

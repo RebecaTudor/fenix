@@ -434,6 +434,7 @@ class DefaultSessionControlController(
             activity.handleRequestDesktopMode(tabId)
         }
         activity.openToBrowser(BrowserDirection.FromHome)
+        appStore.dispatch(AppAction.VisibilityAndroidDeveloperTopSiteChange(false))
     }
 
     @VisibleForTesting

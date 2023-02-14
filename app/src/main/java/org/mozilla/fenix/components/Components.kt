@@ -33,6 +33,7 @@ import org.mozilla.fenix.ext.filterState
 import org.mozilla.fenix.ext.settings
 import org.mozilla.fenix.ext.sort
 import org.mozilla.fenix.gleanplumb.state.MessagingMiddleware
+import org.mozilla.fenix.home.AndroidDeveloperMiddleware
 import org.mozilla.fenix.home.PocketUpdatesMiddleware
 import org.mozilla.fenix.home.blocklist.BlocklistHandler
 import org.mozilla.fenix.home.blocklist.BlocklistMiddleware
@@ -211,6 +212,7 @@ class Components(private val context: Context) {
                     messagingStorage = analytics.messagingStorage,
                 ),
                 MetricsMiddleware(metrics = analytics.metrics),
+                AndroidDeveloperMiddleware(settings, core.topSitesStorage),
             ),
         )
     }

@@ -26,7 +26,6 @@ import org.mozilla.fenix.home.recentvisits.RecentlyVisitedItem
 import org.mozilla.fenix.nimbus.MessageSurfaceId
 import org.mozilla.fenix.nimbus.OnboardingPanel
 import org.mozilla.fenix.onboarding.HomeCFRPresenter
-import org.mozilla.fenix.settings.SupportUtils
 import org.mozilla.fenix.utils.Settings
 import org.mozilla.fenix.nimbus.Onboarding as OnboardingConfig
 
@@ -47,7 +46,6 @@ internal fun normalModeAdapterItems(
     recentVisits: List<RecentlyVisitedItem>,
     pocketStories: List<PocketStory>,
     firstFrameDrawn: Boolean = false,
-    showOpenWebPageButton: Boolean = true,
 ): List<AdapterItem> {
     val items = mutableListOf<AdapterItem>()
     var shouldShowCustomizeHome = false
@@ -59,13 +57,10 @@ internal fun normalModeAdapterItems(
         items.add(AdapterItem.NimbusMessageCard(it))
     }
 
-    if (settings.showTopSitesFeature && topSites.isNotEmpty() && showOpenWebPageButton) {
+    if (settings.showTopSitesFeature && topSites.isNotEmpty()) {
         items.add(AdapterItem.TopSitePager(topSites))
-    } else {
-        if (settings.showTopSitesFeature && topSites.isNotEmpty()) {
-            items.add(AdapterItem.TopSitePager(topSites.filter { it.url != SupportUtils.ANDROID_DEVELOPER_URL }))
-        }
     }
+
 
     if (showRecentTab) {
         shouldShowCustomizeHome = true
@@ -111,9 +106,10 @@ internal fun normalModeAdapterItems(
         items.add(AdapterItem.CustomizeHomeButton)
     }
 
-    if (showOpenWebPageButton) {
-        items.add(AdapterItem.WebPageButton)
+    if (settings.androidDeveloperHomescreenButton) {
+        items.add(AdapterItem.AndroidDeveloperButton)
     }
+
 
     items.add(AdapterItem.BottomSpacer)
 
@@ -181,7 +177,6 @@ private fun AppState.toAdapterList(settings: Settings): List<AdapterItem> = when
         recentHistory,
         pocketStories,
         firstFrameDrawn,
-        isVisibleOpenWebPageButton,
     )
     is Mode.Private -> privateModeAdapterItems()
     is Mode.Onboarding -> onboardingAdapterItems(mode.state, mode.config)

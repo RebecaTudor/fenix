@@ -65,6 +65,7 @@ sealed class AppAction : Action {
     data class RemoveRecentHistoryHighlight(val highlightUrl: String) : AppAction()
     data class DisbandSearchGroupAction(val searchTerm: String) : AppAction()
     data class VisibilityButtonChange(val isVisible: Boolean) : AppAction()
+    data class VisibilityAndroidDeveloperTopSiteChange(val isVisible: Boolean) : AppAction()
 
     /**
      * Indicates the given [categoryName] was selected by the user.

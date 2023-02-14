@@ -65,7 +65,13 @@ class SecretSettingsFragment : PreferenceFragmentCompat() {
         requirePreference<SwitchPreference>(R.string.pref_key_enable_android_developer_documentation).apply {
             isVisible = true
             isChecked = context.settings().androidDeveloperDocumentationFeature
-            onPreferenceChangeListener = SharedPreferenceUpdater()
+            onPreferenceChangeListener = object : SharedPreferenceUpdater() {
+                override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
+                    context.components.settings.androidDeveloperHomescreenButton = newValue as Boolean
+                    context.components.settings.androidDeveloperTopSite = newValue
+                    return super.onPreferenceChange(preference, newValue)
+                }
+            }
         }
     }
 }
