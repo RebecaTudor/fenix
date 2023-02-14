@@ -1478,6 +1478,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
         key = appContext.getPreferenceKey(R.string.pref_key_enable_android_developer_documentation),
         default = true,
     )
+
     /**
      * Indicates if the android developer top site should be visible.
      */
@@ -1485,6 +1486,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
         key = appContext.getPreferenceKey(R.string.pref_key_show_android_developer_top_site),
         default = true,
     )
+
     /**
      * Indicates if the android developer homescreen button should be visible.
      */

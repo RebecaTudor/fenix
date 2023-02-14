@@ -212,7 +212,7 @@ class Components(private val context: Context) {
                     messagingStorage = analytics.messagingStorage,
                 ),
                 MetricsMiddleware(metrics = analytics.metrics),
-                AndroidDeveloperMiddleware(settings, core.topSitesStorage),
+                AndroidDeveloperMiddleware(settings),
             ),
         )
     }

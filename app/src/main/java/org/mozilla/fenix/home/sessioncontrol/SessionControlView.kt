@@ -61,7 +61,6 @@ internal fun normalModeAdapterItems(
         items.add(AdapterItem.TopSitePager(topSites))
     }
 
-
     if (showRecentTab) {
         shouldShowCustomizeHome = true
         items.add(AdapterItem.RecentTabsHeader)
@@ -109,7 +108,6 @@ internal fun normalModeAdapterItems(
     if (settings.androidDeveloperHomescreenButton) {
         items.add(AdapterItem.AndroidDeveloperButton)
     }
-
 
     items.add(AdapterItem.BottomSpacer)
 

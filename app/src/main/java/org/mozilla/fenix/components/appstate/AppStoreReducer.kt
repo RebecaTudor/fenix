@@ -57,8 +57,12 @@ internal object AppStoreReducer {
 
             state.copy(expandedCollections = newExpandedCollection)
         }
-        is AppAction.VisibilityButtonChange -> state.copy(isVisibleAndroidDeveloperButton = action.isVisible)
-        is AppAction.VisibilityAndroidDeveloperTopSiteChange -> state.copy(isVisibleAndroidDeveloperTopSite = action.isVisible)
+        is AppAction.VisibilityHomescreennAndroidDeveloperButtonChange -> state.copy(
+            isVisibleAndroidDeveloperButton = action.isVisible,
+        )
+        is AppAction.VisibilityAndroidDeveloperTopSiteChange -> state.copy(
+            isVisibleAndroidDeveloperTopSite = action.isVisible,
+        )
         is AppAction.CollectionsChange -> state.copy(collections = action.collections)
         is AppAction.ModeChange -> state.copy(mode = action.mode)
         is AppAction.TopSitesChange -> state.copy(topSites = action.topSites)
@@ -132,7 +136,8 @@ internal object AppStoreReducer {
             )
         }
         is AppAction.PocketStoriesCategoriesChange -> {
-            val updatedCategoriesState = state.copy(pocketStoriesCategories = action.storiesCategories)
+            val updatedCategoriesState =
+                state.copy(pocketStoriesCategories = action.storiesCategories)
             // Whenever categories change stories to be displayed needs to also be changed.
             updatedCategoriesState.copy(
                 pocketStories = updatedCategoriesState.getFilteredStories(),

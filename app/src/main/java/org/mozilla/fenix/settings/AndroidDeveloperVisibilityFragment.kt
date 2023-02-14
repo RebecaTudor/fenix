@@ -9,6 +9,9 @@ import org.mozilla.fenix.components.appstate.AppAction
 import org.mozilla.fenix.ext.components
 import org.mozilla.fenix.ext.settings
 
+/**
+ * Let's the user to make visible or not the Android Developers buttons from home screen.
+ */
 class AndroidDeveloperVisibilityFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.android_developer_visibility_preferances, rootKey)
@@ -16,10 +19,9 @@ class AndroidDeveloperVisibilityFragment : PreferenceFragmentCompat() {
         requirePreference<SwitchPreference>(R.string.pref_key_show_android_developer_top_site).apply {
             isVisible = true
             isChecked = context.settings().androidDeveloperTopSite
-           // onPreferenceChangeListener = SharedPreferenceUpdater()
             onPreferenceChangeListener = object : SharedPreferenceUpdater() {
                 override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
-                    if(newValue == false){
+                    if (newValue == false) {
                         context.components.appStore.dispatch(AppAction.VisibilityAndroidDeveloperTopSiteChange(false))
                     }
                     return super.onPreferenceChange(preference, newValue)

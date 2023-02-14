@@ -64,7 +64,7 @@ sealed class AppAction : Action {
     data class RecentHistoryChange(val recentHistory: List<RecentlyVisitedItem>) : AppAction()
     data class RemoveRecentHistoryHighlight(val highlightUrl: String) : AppAction()
     data class DisbandSearchGroupAction(val searchTerm: String) : AppAction()
-    data class VisibilityButtonChange(val isVisible: Boolean) : AppAction()
+    data class VisibilityHomescreennAndroidDeveloperButtonChange(val isVisible: Boolean) : AppAction()
     data class VisibilityAndroidDeveloperTopSiteChange(val isVisible: Boolean) : AppAction()
 
     /**

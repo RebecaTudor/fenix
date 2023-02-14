@@ -513,7 +513,7 @@ class DefaultSessionControlController(
             false,
             null,
         )
-        appStore.dispatch(AppAction.VisibilityButtonChange(false))
+        appStore.dispatch(AppAction.VisibilityHomescreennAndroidDeveloperButtonChange(false))
     }
 
     override fun handleShowWallpapersOnboardingDialog(state: WallpaperState): Boolean {
