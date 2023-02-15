@@ -70,4 +70,5 @@ data class AppState(
     val messaging: MessagingState = MessagingState(),
     val pendingDeletionHistoryItems: Set<PendingDeletionHistory> = emptySet(),
     val wallpaperState: WallpaperState = WallpaperState.default,
+    val isVisibleOpenWebPageButton: Boolean = true,
 ) : State
